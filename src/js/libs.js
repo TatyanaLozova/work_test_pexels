@@ -15,13 +15,16 @@ console.log(client);
 //   img.src = obj.src.original;
 // });
 
-let query = "new year";
+// получаем объектов столько, сколько указали в per_page
+// 1
+let query = "lotus";
 client.photos.search({ query, per_page: 10 }).then((result) => {
   console.log(result.photos);
   const items = template(result.photos);
   refs.gallery.insertAdjacentHTML("afterbegin", items);
 });
 // =======================
+// 2
 // client.photos
 //   .search({ query, per_page: 10 })
 //   .then((result) => {
